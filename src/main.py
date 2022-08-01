@@ -10,6 +10,7 @@ class SM(ScreenManager):
 class MainApp(MDApp):
     DEBUG = True
     sm = None
+    state = {}
 
     def build_app(self, first=False):
         if self.sm is None:
