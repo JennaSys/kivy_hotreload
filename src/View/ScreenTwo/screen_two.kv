@@ -1,0 +1,21 @@
+<Two>:
+    md_bg_color: [0.5, 0.5, 0.5, 1]
+
+    MDLabel:
+        id: label_one
+        text: "SCREEN TWO"
+        font_style: 'H4'
+        halign: 'center'
+        pos_hint: {'center_y': 0.6}
+
+    MDLabel:
+        id: label_two
+        text: "This is screen two"
+        halign: 'center'
+
+    MDRoundFlatButton:
+        id: change_screen
+        text: "Go to screen 1"
+        md_bg_color: [1, 1, 1, 1]
+        pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+        on_release: app.sm.current = 'one'
