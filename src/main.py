@@ -7,8 +7,6 @@ class SM(ScreenManager):
 
 
 class MainApp(MDApp):
-    use_kivy_settings = False
-
     sm = None
 
     def build(self):
