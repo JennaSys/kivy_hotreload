@@ -12,7 +12,9 @@ class MainApp(MDApp):
     sm = None
 
     def build_app(self, first=False):
-        if self.sm is not None:
+        if self.sm is None:
+            self.state = {'current': 'one'}
+        else:
             self.state = {'current': self.sm.current}
 
         KV_FILES = []
@@ -22,8 +24,7 @@ class MainApp(MDApp):
         return self.sm
 
     def apply_state(self, state):
-        if state is not None:
-            self.sm.current = state['current']
+        self.sm.current = state['current']
 
 
 if __name__ == '__main__':
