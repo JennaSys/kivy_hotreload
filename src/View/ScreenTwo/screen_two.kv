@@ -13,9 +13,15 @@
         text: "This is screen two"
         halign: 'center'
 
+    MDTextField:
+        id: data
+        text: "two"
+        pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+        size_hint_x: 0.5
+
     MDRoundFlatButton:
         id: change_screen
         text: "Go to screen 1"
         md_bg_color: [1, 1, 1, 1]
-        pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
         on_release: app.sm.current = 'one'
