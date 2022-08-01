@@ -1,8 +1,8 @@
 import os
 
-from kivy.lang import Builder
+from kivymd.app import MDApp
 
 
 def load_kv(module_name):
-    Builder.load_file(f"{os.path.join(*module_name.split('.'))}.kv")
+    MDApp.get_running_app().KV_FILES.append(f"{os.path.join(*module_name.split('.'))}.kv")
 
