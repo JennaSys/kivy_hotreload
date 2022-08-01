@@ -13,9 +13,13 @@ class MainApp(MDApp):
 
     def build_app(self, first=False):
         if self.sm is None:
-            self.state = {'current': 'one'}
+            self.state = {'current': 'one',
+                          'one': 'one',
+                          'two': 'two'}
         else:
-            self.state = {'current': self.sm.current}
+            self.state = {'current': self.sm.current,
+                          'one': self.sm.get_screen('one').ids.data.text,
+                          'two': self.sm.get_screen('two').ids.data.text}
 
         KV_FILES = []
         self.sm = SM()
@@ -25,6 +29,8 @@ class MainApp(MDApp):
 
     def apply_state(self, state):
         self.sm.current = state['current']
+        self.sm.get_screen('one').ids.data.text = state['one']
+        self.sm.get_screen('two').ids.data.text = state['two']
 
 
 if __name__ == '__main__':
