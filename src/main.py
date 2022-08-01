@@ -14,8 +14,8 @@ class MainApp(MDApp):
     def build_app(self, first=False):
         if self.sm is None:
             self.state = {'current': 'one',
-                          'one': 'one',
-                          'two': 'two'}
+                          'one': 'data one',
+                          'two': 'data two'}
         else:
             self.state = {'current': self.sm.current,
                           'one': self.sm.get_screen('one').ids.data.text,
